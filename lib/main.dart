@@ -27,6 +27,18 @@ class HomeState extends State<Home> {
         MaterialPageRoute(builder: (context) => const Events()),
       );
     }
+    if (index == 3) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Updates()),
+      );
+    }
+    if (index == 4) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Profile()),
+      );
+    }
   }
 
   @override
@@ -243,7 +255,9 @@ class HomeState extends State<Home> {
                 label: 'Map',
               ),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.notifications), label: 'Updates'),
+                icon: Icon(Icons.notifications),
+                label: 'Updates',
+              ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.person),
                 label: 'Profile',
@@ -270,6 +284,12 @@ class EventsState extends State<Events> {
   void _onItemTapped(int index) {
     if (index == 0) {
       Navigator.pop(context);
+    }
+    if (index == 3) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Updates()),
+      );
     }
   }
 
@@ -315,7 +335,7 @@ class EventsState extends State<Events> {
                   ),
                   Center(
                     child: Container(
-                      height: 40.h,
+                      height: 60.h,
                       width: 400.w,
                       decoration: BoxDecoration(
                           shape: BoxShape.rectangle,
@@ -328,7 +348,220 @@ class EventsState extends State<Events> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'Diwali Celebrations',
+                          'Diwali Celebrations! Click Here to join the google meet.',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            backgroundColor: Colors.blue[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    child: Text(
+                      '24 October 2022',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Container(
+                      height: 60.h,
+                      width: 400.w,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          color: Colors.blue[200],
+                          borderRadius: BorderRadius.circular(5.r),
+                          border: Border.all(
+                            width: 2,
+                            color: Colors.blue,
+                          )),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Diwali Celebrations! Click Here to join the google meet.',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            backgroundColor: Colors.blue[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            unselectedItemColor: Colors.black,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calendar_today_outlined),
+                label: 'Events',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.map_outlined),
+                label: 'Map',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.notifications),
+                label: 'Updates',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              )
+            ],
+            currentIndex: 1,
+            selectedItemColor: Colors.blue[300],
+            onTap: _onItemTapped,
+          ),
+        );
+      },
+    );
+  }
+}
+
+class Updates extends StatefulWidget {
+  const Updates({Key? key}) : super(key: key);
+
+  @override
+  State<Updates> createState() => UpdatesState();
+}
+
+class UpdatesState extends State<Updates> {
+  void _onItemTapped(int index) {
+    if (index == 0) {
+      Navigator.pop(context);
+      if (index == 1) {
+        Navigator.pop(context);
+      }
+    }
+    if (index == 1) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Events()),
+      );
+    }
+    if (index == 4) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Profile()),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenUtilInit(
+      designSize: const Size(428, 926),
+      builder: (context, child) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text(
+              'Updates',
+              style: TextStyle(color: Colors.black),
+            ),
+            backgroundColor: Colors.white,
+            toolbarHeight: 60.0,
+            leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.dehaze_rounded),
+              color: Colors.black,
+            ),
+            actions: [
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset('assets/logo.png'),
+                iconSize: 30.0,
+              ),
+            ],
+          ),
+          body: Column(
+            children: [
+              Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    child: Text(
+                      '28 October 2022',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Container(
+                      height: 60.h,
+                      width: 400.w,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          color: Colors.blue[200],
+                          borderRadius: BorderRadius.circular(5.r),
+                          border: Border.all(
+                            width: 2,
+                            color: Colors.blue,
+                          )),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Reminder! Last day to fill the teachers feedback form. Click here to redirect to OAS.',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            backgroundColor: Colors.blue[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    child: Text(
+                      '28 October 2022',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Container(
+                      height: 60.h,
+                      width: 400.w,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          color: Colors.blue[200],
+                          borderRadius: BorderRadius.circular(5.r),
+                          border: Border.all(
+                            width: 2,
+                            color: Colors.blue,
+                          )),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Reminder! Last day to fill the teachers feedback form. Click here to redirect to OAS.',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 16,
@@ -359,13 +592,418 @@ class EventsState extends State<Events> {
                 label: 'Map',
               ),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.notifications), label: 'Updates'),
+                icon: Icon(Icons.notifications),
+                label: 'Updates',
+              ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.person),
                 label: 'Profile',
               )
             ],
-            currentIndex: 1,
+            currentIndex: 3,
+            selectedItemColor: Colors.blue[300],
+            onTap: _onItemTapped,
+          ),
+        );
+      },
+    );
+  }
+}
+
+class Profile extends StatefulWidget {
+  const Profile({Key? key}) : super(key: key);
+
+  @override
+  State<Profile> createState() => ProfileState();
+}
+
+class ProfileState extends State<Profile> {
+  void _onItemTapped(int index) {
+    if (index == 0) {
+      Navigator.pop(context);
+    }
+    if (index == 3) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Updates()),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenUtilInit(
+      designSize: const Size(428, 926),
+      builder: (context, child) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text(
+              'Profile',
+              style: TextStyle(color: Colors.black),
+            ),
+            backgroundColor: Colors.white,
+            toolbarHeight: 60.0,
+            leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.dehaze_rounded),
+              color: Colors.black,
+            ),
+            actions: [
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset('assets/logo.png'),
+                iconSize: 60.0,
+              ),
+            ],
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 150.h,
+                width: 400.w,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15.0),
+                            child: Image.asset('assets/3.png')),
+                      ),
+                    ),
+                    const Expanded(
+                        flex: 3,
+                        child: Padding(
+                          padding: EdgeInsets.all(20.0),
+                          child: Text(
+                            " Himanshu Panchal \n B.Tech Computer Science - 2025\n B21101 | B-13 103 Hostel \n Semester: 03 | CGPA: 8.33",
+                          ),
+                        ))
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Text("Courses"),
+                        )
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Text("Credits: 42/160"),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        height: 55.h,
+                        width: 55.w,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: Colors.blue[100],
+                            borderRadius: BorderRadius.circular(5.r),
+                            border: Border.all(
+                              width: 2,
+                              color: Colors.blue,
+                            )),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            "20\n/45",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              backgroundColor: Colors.blue[100],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(5.0),
+                        child: Text("Institute\n Core",
+                            textAlign: TextAlign.center),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 55.h,
+                        width: 55.w,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: Colors.blue[100],
+                            borderRadius: BorderRadius.circular(5.r),
+                            border: Border.all(
+                              width: 2,
+                              color: Colors.blue,
+                            )),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            "20\n/45",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              backgroundColor: Colors.blue[100],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(5.0),
+                        child: Text("Discipline\n Core",
+                            textAlign: TextAlign.center),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 55.h,
+                        width: 55.w,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: Colors.blue[100],
+                            borderRadius: BorderRadius.circular(5.r),
+                            border: Border.all(
+                              width: 2,
+                              color: Colors.blue,
+                            )),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            "20\n/45",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              backgroundColor: Colors.blue[100],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(5.0),
+                        child: Text("Discipline\n Electives",
+                            textAlign: TextAlign.center),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 55.h,
+                        width: 55.w,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: Colors.blue[100],
+                            borderRadius: BorderRadius.circular(5.r),
+                            border: Border.all(
+                              width: 2,
+                              color: Colors.blue,
+                            )),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            "20\n/45",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              backgroundColor: Colors.blue[100],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(5.0),
+                        child: Text("HSS\n Electives",
+                            textAlign: TextAlign.center),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 55.h,
+                        width: 55.w,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: Colors.blue[100],
+                            borderRadius: BorderRadius.circular(5.r),
+                            border: Border.all(
+                              width: 2,
+                              color: Colors.blue,
+                            )),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            "20\n/45",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              backgroundColor: Colors.blue[100],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(5.0),
+                        child: Text(
+                          "Free\n Electives",
+                          textAlign: TextAlign.center,
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Text("Institute Core"),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Container(
+                            height: 60.h,
+                            width: 400.w,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                color: Colors.blue[100],
+                                borderRadius: BorderRadius.circular(5.r),
+                                border: Border.all(
+                                  width: 2,
+                                  color: Colors.blue,
+                                )),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                " CS202: Data Structures and Algorithms\n Credits: 04 | Semester: 03",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  backgroundColor: Colors.blue[100],
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Container(
+                            height: 60.h,
+                            width: 400.w,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                color: Colors.blue[100],
+                                borderRadius: BorderRadius.circular(5.r),
+                                border: Border.all(
+                                  width: 2,
+                                  color: Colors.blue,
+                                )),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                " CS202: Data Structures and Algorithms\n Credits: 04 | Semester: 03",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  backgroundColor: Colors.blue[100],
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+            foregroundColor: Colors.lightBlue,
+            splashColor: Colors.teal,
+            child: const Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            unselectedItemColor: Colors.black,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calendar_today_outlined),
+                label: 'Events',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.map_outlined),
+                label: 'Map',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.notifications),
+                label: 'Updates',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              )
+            ],
+            currentIndex: 4,
             selectedItemColor: Colors.blue[300],
             onTap: _onItemTapped,
           ),
