@@ -11,117 +11,120 @@ class Updates extends StatefulWidget {
 class UpdatesState extends State<Updates> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return ScreenUtilInit(
       designSize: const Size(428, 926),
       builder: (context, child) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'Updates',
-              style: TextStyle(color: Colors.black, fontSize: 20.sp),
-            ),
-            backgroundColor: Colors.white,
-            toolbarHeight: 50.h,
-            leading: Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.dehaze_rounded),
-                color: Colors.black,
-                iconSize: 25.r,
+        return Container(
+          constraints: BoxConstraints(maxHeight: height, maxWidth: width),
+          child: Scaffold(
+            appBar: AppBar(
+              title: Text(
+                'Updates',
+                style: TextStyle(color: Colors.black, fontSize: 20.sp),
               ),
-            ),
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: Image.asset('assets/logo.png'),
-                iconSize: 60.r,
+              backgroundColor: Colors.white,
+              toolbarHeight: 50.h,
+              leading: Padding(
+                padding: EdgeInsets.all(4.r),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.dehaze_rounded),
+                  color: Colors.black,
+                  iconSize: 25.r,
+                ),
               ),
-            ],
-          ),
-          body: Column(
-            children: [
-              Column(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    child: Text(
-                      '28 October 2022',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: Container(
-                      height: 60.h,
-                      width: 400.w,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: Colors.blue[200],
-                          borderRadius: BorderRadius.circular(5.r),
-                          border: Border.all(
-                            width: 2,
-                            color: Colors.blue,
-                          )),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Reminder! Last day to fill the teachers feedback form. Click here to redirect to OAS.',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w400,
-                            backgroundColor: Colors.blue[200],
-                          ),
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset('assets/logo1.png'),
+                  iconSize: 40.r,
+                ),
+              ],
+            ),
+            body: Column(
+              children: [
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+                      child: Text(
+                        '28 October 2022',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20.sp,
                         ),
                       ),
                     ),
-                  )
-                ],
-              ),
-              Column(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    child: Text(
-                      '28 October 2022',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: Container(
-                      height: 60.h,
-                      width: 400.w,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: Colors.blue[200],
-                          borderRadius: BorderRadius.circular(5.r),
-                          border: Border.all(
-                            width: 2,
-                            color: Colors.blue,
-                          )),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Reminder! Last day to fill the teachers feedback form. Click here to redirect to OAS.',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w400,
-                            backgroundColor: Colors.blue[200],
+                    Center(
+                      child: Container(
+                        width: 400.w,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: Colors.blue[200],
+                            borderRadius: BorderRadius.circular(5.r),
+                            border: Border.all(
+                              width: 2.r,
+                              color: Colors.blue,
+                            )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.r),
+                          child: Text(
+                            'Reminder! Last day to fill the teachers feedback form. Click here to redirect to OAS.',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w400,
+                              backgroundColor: Colors.blue[200],
+                            ),
                           ),
                         ),
                       ),
+                    )
+                  ],
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+                      child: Text(
+                        '28 October 2022',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20.sp,
+                        ),
+                      ),
                     ),
-                  )
-                ],
-              )
-            ],
+                    Center(
+                      child: Container(
+                        width: 400.w,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: Colors.blue[200],
+                            borderRadius: BorderRadius.circular(5.r),
+                            border: Border.all(
+                              width: 2.r,
+                              color: Colors.blue,
+                            )),
+                        child: Padding(
+                          padding:  EdgeInsets.all(8.r),
+                          child: Text(
+                            'Reminder! Last day to fill the teachers feedback form. Click here to redirect to OAS.',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w400,
+                              backgroundColor: Colors.blue[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         );
       },

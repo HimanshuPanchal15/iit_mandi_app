@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iit_mandi_app/Pages/login.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,11 +12,13 @@ class Home extends StatefulWidget {
 class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return ScreenUtilInit(
       designSize: const Size(428, 926),
       builder: (context, child) {
         return Container(
-          constraints: BoxConstraints(maxHeight: 926.h, maxWidth: 428.w),
+          constraints: BoxConstraints(maxHeight: height, maxWidth: width),
           child: Scaffold(
             appBar: AppBar(
               title: Text(
@@ -25,7 +28,7 @@ class HomeState extends State<Home> {
               backgroundColor: Colors.white,
               toolbarHeight: 50.h,
               leading: Padding(
-                padding: const EdgeInsets.all(5.0),
+                padding: EdgeInsets.all(4.r),
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.dehaze_rounded),
@@ -36,37 +39,40 @@ class HomeState extends State<Home> {
               actions: [
                 IconButton(
                   onPressed: () {},
-                  icon: Image.asset('assets/logo.png'),
-                  iconSize: 60.r,
+                  icon: Image.asset('assets/logo1.png'),
+                  iconSize: 40.r,
                 ),
               ],
             ),
             body: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(5.0),
+                  padding: EdgeInsets.all(5.r),
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.r),
                       child: Image.asset('assets/2.png')),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    'Welcome Back,\nHimanshu Panchal',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      fontSize: 16.sp,
+                Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(15.r),
+                      child: Text(
+                        'Welcome Back,\nHimanshu Panchal',
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                          fontSize: 18.sp,
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: EdgeInsets.all(4.r),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -74,12 +80,12 @@ class HomeState extends State<Home> {
                               child: Image.asset('assets/i1.png',
                                   height: 120.h, width: 120.w)),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.r),
                             child: Text(
                               'How to \nreach Mandi?',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                               ),
                             ),
                           )
@@ -87,7 +93,7 @@ class HomeState extends State<Home> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: EdgeInsets.all(4.r),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -100,7 +106,7 @@ class HomeState extends State<Home> {
                               'Campus & \n Infrastructure',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                               ),
                             ),
                           )
@@ -108,7 +114,7 @@ class HomeState extends State<Home> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: EdgeInsets.all(4.r),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -121,7 +127,7 @@ class HomeState extends State<Home> {
                               'Placement \n Statistics',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                               ),
                             ),
                           )
@@ -135,7 +141,7 @@ class HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: EdgeInsets.all(4.r),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -143,12 +149,12 @@ class HomeState extends State<Home> {
                               child: Image.asset('assets/i4.png',
                                   height: 120.h, width: 120.w)),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.r),
                             child: Text(
                               'IIT Mandi \n Alumni',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                               ),
                             ),
                           )
@@ -156,7 +162,7 @@ class HomeState extends State<Home> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: EdgeInsets.all(4.r),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -169,7 +175,7 @@ class HomeState extends State<Home> {
                               'Records & \n Achievements',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                               ),
                             ),
                           )
@@ -177,7 +183,7 @@ class HomeState extends State<Home> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: EdgeInsets.all(4.r),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -185,12 +191,12 @@ class HomeState extends State<Home> {
                               child: Image.asset('assets/i6.png',
                                   height: 120.h, width: 120.w)),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.r),
                             child: Text(
                               'Departments & \n Courses',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                               ),
                             ),
                           )
@@ -204,7 +210,7 @@ class HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: EdgeInsets.all(4.r),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -217,7 +223,7 @@ class HomeState extends State<Home> {
                               'IIT Mandi \n Faculties',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                               ),
                             ),
                           )
@@ -225,7 +231,7 @@ class HomeState extends State<Home> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: EdgeInsets.all(4.r),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -238,7 +244,7 @@ class HomeState extends State<Home> {
                               'Important \n Contacts',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                               ),
                             ),
                           )
@@ -246,7 +252,7 @@ class HomeState extends State<Home> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: EdgeInsets.all(4.r),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -254,12 +260,12 @@ class HomeState extends State<Home> {
                               child: Image.asset('assets/i9.png',
                                   height: 120.h, width: 120.w)),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.r),
                             child: Text(
                               'News & \n Media',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 15.sp,
                               ),
                             ),
                           )
